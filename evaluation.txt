@@ -1,0 +1,155 @@
+BUILD MODEL
+#######################################################################
+LOAD MODEL
+1.pt
+8642
+736
+Test Loss:0.2574596777514238  Test Time:0.5919387340545654
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9266    0.9619       368
+           1     0.9316    1.0000    0.9646       368
+
+    accuracy                         0.9633       736
+   macro avg     0.9658    0.9633    0.9633       736
+weighted avg     0.9658    0.9633    0.9633       736
+
+0.9632657814617157
+LOAD MODEL
+2.pt
+8642
+736
+Test Loss:0.3280336823490569  Test Time:0.26944994926452637
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9293    0.9634       368
+           1     0.9340    1.0000    0.9659       368
+
+    accuracy                         0.9647       736
+   macro avg     0.9670    0.9647    0.9646       736
+weighted avg     0.9670    0.9647    0.9646       736
+
+0.9646297733910022
+LOAD MODEL
+3.pt
+8642
+736
+Test Loss:0.17198054216395778  Test Time:0.26888322830200195
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9674    0.9834       368
+           1     0.9684    1.0000    0.9840       368
+
+    accuracy                         0.9837       736
+   macro avg     0.9842    0.9837    0.9837       736
+weighted avg     0.9842    0.9837    0.9837       736
+
+0.9836913168079888
+LOAD MODEL
+4.pt
+8642
+736
+Test Loss:0.09707947564303421  Test Time:0.2847785949707031
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9783    0.9890       368
+           1     0.9787    1.0000    0.9892       368
+
+    accuracy                         0.9891       736
+   macro avg     0.9894    0.9891    0.9891       736
+weighted avg     0.9894    0.9891    0.9891       736
+
+0.989129150419473
+LOAD MODEL
+5.pt
+8642
+736
+Test Loss:0.2094980487599446  Test Time:0.28827786445617676
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9701    0.9848       368
+           1     0.9710    1.0000    0.9853       368
+
+    accuracy                         0.9851       736
+   macro avg     0.9855    0.9851    0.9851       736
+weighted avg     0.9855    0.9851    0.9851       736
+
+0.9850510086322302
+LOAD MODEL
+6.pt
+8642
+736
+Test Loss:0.31135659305420876  Test Time:0.2788097858428955
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9457    0.9721       368
+           1     0.9485    1.0000    0.9735       368
+
+    accuracy                         0.9728       736
+   macro avg     0.9742    0.9728    0.9728       736
+weighted avg     0.9742    0.9728    0.9728       736
+
+0.9728060063255594
+LOAD MODEL
+7.pt
+8642
+736
+Test Loss:0.3393890862119754  Test Time:0.2796909809112549
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9538    0.9764       368
+           1     0.9558    1.0000    0.9774       368
+
+    accuracy                         0.9769       736
+   macro avg     0.9779    0.9769    0.9769       736
+weighted avg     0.9779    0.9769    0.9769       736
+
+0.9768898444238807
+LOAD MODEL
+8.pt
+8642
+736
+Test Loss:0.16968191859394405  Test Time:0.3224179744720459
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9647    0.9820       368
+           1     0.9659    1.0000    0.9826       368
+
+    accuracy                         0.9823       736
+   macro avg     0.9829    0.9823    0.9823       736
+weighted avg     0.9829    0.9823    0.9823       736
+
+0.9823314442308508
+LOAD MODEL
+9.pt
+8642
+736
+Test Loss:0.2309734193003081  Test Time:0.26616930961608887
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9620    0.9806       368
+           1     0.9634    1.0000    0.9813       368
+
+    accuracy                         0.9810       736
+   macro avg     0.9817    0.9810    0.9810       736
+weighted avg     0.9817    0.9810    0.9810       736
+
+0.9809713758079409
