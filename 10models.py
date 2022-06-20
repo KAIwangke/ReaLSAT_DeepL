@@ -28,7 +28,13 @@ farm_label_array_path = '/home/kumarv/pravirat/Realsat_labelling/farm_code_W/far
 warped_data_path = '../../WARPED_DATA/350_400_stage2_warped_64x64/'
 continent_info_array_path = '/home/kumarv/pravirat/Realsat_labelling/continent_info.npy'
 paths_list = glob.glob(os.path.join(warped_data_path + '*.npy'))
-
+path = "/home/kumarv/pravirat/Realsat_labelling/reservoir_info.npy"
+reservoir = np.load(path)
+reservoir = reservoir.tolist()
+reserviorID = []
+for i,d in enumerate(reservoir):
+    if d == 1:
+        reserviorID.append(i)
 
 # models and functions setting
 class CNN_simple(torch.nn.Module):
@@ -97,6 +103,13 @@ for path in paths_list:
         continent_path_list.append(path)
         continent_ID_list.append(int(ID))
         # contain all the IDs in the list
+
+print("BEFORE RE")
+print(len(continent_ID_list))
+continent_ID_list = [x for x in continent_ID_list if x not in reserviorID]
+print("AFTER RE")
+print(len(continent_ID_list))
+
 
 
 criterion = torch.nn.CrossEntropyLoss()
@@ -197,6 +210,9 @@ if(max(totallist)>round*Nofalgorithms):
 
 
 new = []
+level10=[]
+level9=[]
+level8=[]
 notnew = []
 
 
@@ -256,18 +272,22 @@ for i,d in enumerate(totallist):
         counting7+=1
     if(d == 8):
         counting8+=1
+        level8.append(i)
     if(d == 9):
         counting9+=1
+        level9.append(i)
     if(d == 10):
         counting10+=1
-        new.append(i)
+        level10.append(i)
 
 
 print(len(final_IDs))
 
 
-items = new.copy()
-notitems = notnew.copy()
+level10s = level10.copy()
+level9s = level9.copy()
+level8s = level8.copy()
+
 # open file in write mode
 
 print("\n")
@@ -295,14 +315,20 @@ print(counting8)
 print(counting9)
 print(counting10)
 
-with open(r'/home/kumarv/pravirat/Realsat_labelling/TEMPSTOREPATH/predictAsFarm.txt', 'w') as fp:
-    for item in items:
+with open(r'/home/kumarv/pravirat/Realsat_labelling/TEMPSTOREPATH/level10s.txt', 'w') as fp:
+    for item in level10s:
         # write each item on a new line
         fp.write("%s\n" % item)
     print('Store Done')
 
-with open(r'/home/kumarv/pravirat/Realsat_labelling/TEMPSTOREPATH/predictNotasFarm.txt', 'w') as fp:
-    for item in notitems:
+with open(r'/home/kumarv/pravirat/Realsat_labelling/TEMPSTOREPATH/level9s.txt', 'w') as fp:
+    for item in level9s:
+        # write each item on a new line
+        fp.write("%s\n" % item)
+    print('Store Done')
+
+with open(r'/home/kumarv/pravirat/Realsat_labelling/TEMPSTOREPATH/level8s.txt', 'w') as fp:
+    for item in level8s:
         # write each item on a new line
         fp.write("%s\n" % item)
     print('Store Done')
@@ -310,3 +336,4 @@ with open(r'/home/kumarv/pravirat/Realsat_labelling/TEMPSTOREPATH/predictNotasFa
 # print(totallist)
 # print("this is the final output")
 # print(new)
+# %%
