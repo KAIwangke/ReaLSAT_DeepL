@@ -1,95 +1,26 @@
-BUILD MODEL
 #######################################################################
 LOAD MODEL
 1.pt
 8642
 736
-Test Loss:0.2574596777514238  Test Time:0.5919387340545654
+Test Loss:0.3049722822527775  Test Time:0.603081226348877
 
 
               precision    recall  f1-score   support
 
-           0     1.0000    0.9266    0.9619       368
-           1     0.9316    1.0000    0.9646       368
+           0     1.0000    0.9185    0.9575       368
+           1     0.9246    1.0000    0.9608       368
 
-    accuracy                         0.9633       736
-   macro avg     0.9658    0.9633    0.9633       736
-weighted avg     0.9658    0.9633    0.9633       736
+    accuracy                         0.9592       736
+   macro avg     0.9623    0.9592    0.9592       736
+weighted avg     0.9623    0.9592    0.9592       736
 
-0.9632657814617157
+0.9591712956456779
 LOAD MODEL
 2.pt
 8642
 736
-Test Loss:0.3280336823490569  Test Time:0.26944994926452637
-
-
-              precision    recall  f1-score   support
-
-           0     1.0000    0.9293    0.9634       368
-           1     0.9340    1.0000    0.9659       368
-
-    accuracy                         0.9647       736
-   macro avg     0.9670    0.9647    0.9646       736
-weighted avg     0.9670    0.9647    0.9646       736
-
-0.9646297733910022
-LOAD MODEL
-3.pt
-8642
-736
-Test Loss:0.17198054216395778  Test Time:0.26888322830200195
-
-
-              precision    recall  f1-score   support
-
-           0     1.0000    0.9674    0.9834       368
-           1     0.9684    1.0000    0.9840       368
-
-    accuracy                         0.9837       736
-   macro avg     0.9842    0.9837    0.9837       736
-weighted avg     0.9842    0.9837    0.9837       736
-
-0.9836913168079888
-LOAD MODEL
-4.pt
-8642
-736
-Test Loss:0.09707947564303421  Test Time:0.2847785949707031
-
-
-              precision    recall  f1-score   support
-
-           0     1.0000    0.9783    0.9890       368
-           1     0.9787    1.0000    0.9892       368
-
-    accuracy                         0.9891       736
-   macro avg     0.9894    0.9891    0.9891       736
-weighted avg     0.9894    0.9891    0.9891       736
-
-0.989129150419473
-LOAD MODEL
-5.pt
-8642
-736
-Test Loss:0.2094980487599446  Test Time:0.28827786445617676
-
-
-              precision    recall  f1-score   support
-
-           0     1.0000    0.9701    0.9848       368
-           1     0.9710    1.0000    0.9853       368
-
-    accuracy                         0.9851       736
-   macro avg     0.9855    0.9851    0.9851       736
-weighted avg     0.9855    0.9851    0.9851       736
-
-0.9850510086322302
-LOAD MODEL
-6.pt
-8642
-736
-Test Loss:0.31135659305420876  Test Time:0.2788097858428955
+Test Loss:0.18882257130061306  Test Time:0.2355177402496338
 
 
               precision    recall  f1-score   support
@@ -103,27 +34,95 @@ weighted avg     0.9742    0.9728    0.9728       736
 
 0.9728060063255594
 LOAD MODEL
-7.pt
+3.pt
 8642
 736
-Test Loss:0.3393890862119754  Test Time:0.2796909809112549
+Test Loss:0.3393897545447368  Test Time:0.2452235221862793
 
 
               precision    recall  f1-score   support
 
-           0     1.0000    0.9538    0.9764       368
-           1     0.9558    1.0000    0.9774       368
+           0     1.0000    0.9321    0.9648       368
+           1     0.9364    1.0000    0.9671       368
 
-    accuracy                         0.9769       736
-   macro avg     0.9779    0.9769    0.9769       736
-weighted avg     0.9779    0.9769    0.9769       736
+    accuracy                         0.9660       736
+   macro avg     0.9682    0.9660    0.9660       736
+weighted avg     0.9682    0.9660    0.9660       736
 
-0.9768898444238807
+0.9659933724039914
+LOAD MODEL
+4.pt
+8642
+736
+Test Loss:0.19628960474244997  Test Time:0.24724984169006348
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9620    0.9806       368
+           1     0.9634    1.0000    0.9813       368
+
+    accuracy                         0.9810       736
+   macro avg     0.9817    0.9810    0.9810       736
+weighted avg     0.9817    0.9810    0.9810       736
+
+0.9809713758079409
+LOAD MODEL
+5.pt
+8642
+736
+Test Loss:0.42809992990033136  Test Time:0.2586836814880371
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9429    0.9706       368
+           1     0.9460    1.0000    0.9723       368
+
+    accuracy                         0.9715       736
+   macro avg     0.9730    0.9715    0.9714       736
+weighted avg     0.9730    0.9715    0.9714       736
+
+0.9714441437030605
+LOAD MODEL
+6.pt
+8642
+736
+Test Loss:0.2259910337613195  Test Time:0.24055075645446777
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9647    0.9820       368
+           1     0.9659    1.0000    0.9826       368
+
+    accuracy                         0.9823       736
+   macro avg     0.9829    0.9823    0.9823       736
+weighted avg     0.9829    0.9823    0.9823       736
+
+0.9823314442308508
+LOAD MODEL
+7.pt
+8642
+736
+Test Loss:0.24511007654664121  Test Time:0.22934198379516602
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9674    0.9834       368
+           1     0.9684    1.0000    0.9840       368
+
+    accuracy                         0.9837       736
+   macro avg     0.9842    0.9837    0.9837       736
+weighted avg     0.9842    0.9837    0.9837       736
+
+0.9836913168079888
 LOAD MODEL
 8.pt
 8642
 736
-Test Loss:0.16968191859394405  Test Time:0.3224179744720459
+Test Loss:0.19299605439086995  Test Time:0.24791860580444336
 
 
               precision    recall  f1-score   support
@@ -140,16 +139,33 @@ LOAD MODEL
 9.pt
 8642
 736
-Test Loss:0.2309734193003081  Test Time:0.26616930961608887
+Test Loss:0.13142957569778949  Test Time:0.23811030387878418
 
 
               precision    recall  f1-score   support
 
-           0     1.0000    0.9620    0.9806       368
-           1     0.9634    1.0000    0.9813       368
+           0     1.0000    0.9728    0.9862       368
+           1     0.9735    1.0000    0.9866       368
 
-    accuracy                         0.9810       736
-   macro avg     0.9817    0.9810    0.9810       736
-weighted avg     0.9817    0.9810    0.9810       736
+    accuracy                         0.9864       736
+   macro avg     0.9868    0.9864    0.9864       736
+weighted avg     0.9868    0.9864    0.9864       736
 
-0.9809713758079409
+0.9864105347897695
+LOAD MODEL
+10.pt
+8642
+736
+Test Loss:0.2288185519005548  Test Time:0.23430943489074707
+
+
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9592    0.9792       368
+           1     0.9608    1.0000    0.9800       368
+
+    accuracy                         0.9796       736
+   macro avg     0.9804    0.9796    0.9796       736
+weighted avg     0.9804    0.9796    0.9796       736
+
+0.9796110964391445
