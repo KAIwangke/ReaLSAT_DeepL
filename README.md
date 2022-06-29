@@ -1,3 +1,3 @@
-# Lab 0
+Research Work: Deep Learning in ReaLSAT dataset.
 
-Please fix the typo in ```lab0-helloworld.py```.
+Publication: (ReaLSAT, a global dataset of reservoir and lake surface area variations)[https://www.nature.com/articles/s41597-022-01449-5]
