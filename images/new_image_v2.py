@@ -20,6 +20,34 @@ warped_data_path = '/home/kumarv/pravirat/Realsat_labelling/WARPED_DATA/400_450_
 paths_list = glob.glob(os.path.join(warped_data_path + '*.npy')) # gets all paths
 
 '''
+## convert png to npy
+image_path = '/home/kumarv/pravirat/Realsat_labelling/river_code_kx/US_IMAGE/'
+image_paths_list = glob.glob(os.path.join(image_path + '*.png'))
+
+for path in image_paths_list:
+    img = Image.open(path)
+    ID = path.split('/')[-1].replace('.png','')
+    if(len(str(ID))!=6):
+        complete = 6-len(str(ID))
+        strID = '0'*complete+str(ID)
+    else:
+        strID = str(ID)
+    name = strID +'.npy'
+    
+    data = np.array( img, dtype='uint8' )
+
+    np.save( '/home/kumarv/pravirat/Realsat_labelling/river_code_kx/GPS_IMAGE_NPY/' + name, data)
+
+
+## RUN THE PART ABOVE ONLY TO SAVE .NPY FILE
+############################################################
+'''
+
+
+
+
+
+'''
 image_path = '/home/kumarv/pravirat/Realsat_labelling/river_code_kx/US_IMAGE/'
 image_paths_list = glob.glob(os.path.join(image_path + '*.png'))
 
@@ -66,10 +94,12 @@ structure = np.ones((3, 3), dtype=np.int)
 erosion_structure = np.array([[0,0,0],
                       [0,1,0],
                       [0,0,0]], dtype=np.int)
+# exit()
+
 
 indicator = 0
 with PdfPages(os.path.join('/home/kumarv/pravirat/Realsat_labelling/river_code_kx/400_450_PDF/160*160/',"test"+ ".pdf")) as pdf:
-    for id in labeled_farm[0:500]:
+    for id in labeled_farm[0:1000]:
         ID = id
         for path in paths_list:
         #     print(path)
@@ -85,9 +115,10 @@ with PdfPages(os.path.join('/home/kumarv/pravirat/Realsat_labelling/river_code_k
                     strID = '0'*complete+str(ID)
                 else:
                     strID = str(ID)
-                name = strID +'.png'
+                name = strID +'.npy'
 
-                gpsimg = mpimg.imread('/home/kumarv/pravirat/Realsat_labelling/river_code_kx/RESIZE_US_IMAGE/'+ name)
+                gpsimg = np.load('/home/kumarv/pravirat/Realsat_labelling/river_code_kx/GPS_IMAGE_NPY/'+ name)
+                # gpsimg = mpimg.imread('/home/kumarv/pravirat/Realsat_labelling/river_code_kx/RESIZE_US_IMAGE/'+ name)
                 # plt.imshow(img)
                 plt.axis('off')     
                 
