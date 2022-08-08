@@ -1,4 +1,3 @@
-# %%
 import os
 from matplotlib.backends.backend_pdf import PdfPages
 import matplotlib.pyplot as plt
@@ -12,7 +11,9 @@ import pandas as pd
 import matplotlib.image as mpimg
 from PIL import Image
 from scipy.ndimage.measurements import label
-
+import tensorflow
+from keras.preprocessing.image import img_to_array
+from keras.preprocessing.image import array_to_img
 
 
 warped_data_path = '/home/kumarv/pravirat/Realsat_labelling/WARPED_DATA/400_450_stage2_warped_64x64/'
@@ -26,6 +27,7 @@ image_paths_list = glob.glob(os.path.join(image_path + '*.png'))
 
 for path in image_paths_list:
     img = Image.open(path)
+    img = img.convert('RGB')
     ID = path.split('/')[-1].replace('.png','')
     if(len(str(ID))!=6):
         complete = 6-len(str(ID))
@@ -38,13 +40,12 @@ for path in image_paths_list:
 
     np.save( '/home/kumarv/pravirat/Realsat_labelling/river_code_kx/GPS_IMAGE_NPY/' + name, data)
 
+exit()
 
 ## RUN THE PART ABOVE ONLY TO SAVE .NPY FILE
 ############################################################
+############################################################
 '''
-
-
-
 
 
 '''
@@ -99,7 +100,7 @@ erosion_structure = np.array([[0,0,0],
 
 indicator = 0
 with PdfPages(os.path.join('/home/kumarv/pravirat/Realsat_labelling/river_code_kx/400_450_PDF/160*160/',"test"+ ".pdf")) as pdf:
-    for id in labeled_farm[0:1000]:
+    for id in labeled_farm:
         ID = id
         for path in paths_list:
         #     print(path)
@@ -117,7 +118,8 @@ with PdfPages(os.path.join('/home/kumarv/pravirat/Realsat_labelling/river_code_k
                     strID = str(ID)
                 name = strID +'.npy'
 
-                gpsimg = np.load('/home/kumarv/pravirat/Realsat_labelling/river_code_kx/GPS_IMAGE_NPY/'+ name)
+                array = np.load('/home/kumarv/pravirat/Realsat_labelling/river_code_kx/GPS_IMAGE_NPY/'+ name)    
+                gpsimg = array_to_img(array)
                 # gpsimg = mpimg.imread('/home/kumarv/pravirat/Realsat_labelling/river_code_kx/RESIZE_US_IMAGE/'+ name)
                 # plt.imshow(img)
                 plt.axis('off')     
@@ -133,7 +135,7 @@ with PdfPages(os.path.join('/home/kumarv/pravirat/Realsat_labelling/river_code_k
                 image[image == 2] = 1
 
                 frac_map = np.mean(image,axis = 0)
-
+ 
                 water_pixels = []
                 for t in range(image.shape[0]):
                     no_water = np.sum(image[t] == 1)
@@ -151,7 +153,6 @@ with PdfPages(os.path.join('/home/kumarv/pravirat/Realsat_labelling/river_code_k
                 first_quarter =  round(np.percentile(sequence, 25), 2)
                 half = round(np.percentile(sequence, 50), 2)
                 third_quarter = round(np.percentile(sequence, 75), 2)
-            
 
                 ax1= fig.add_subplot(1,7,1)
                 ax2= fig.add_subplot(1,7,2)
@@ -161,7 +162,6 @@ with PdfPages(os.path.join('/home/kumarv/pravirat/Realsat_labelling/river_code_k
                 ax6= fig.add_subplot(1,7,6)
                 ax7= fig.add_subplot(1,7,7)
            
-
                 ax1.plot(water_pixels)
                 ax1.title.set_text( str(ID)+ ' water_count'+'Continent: US')
 
@@ -180,8 +180,7 @@ with PdfPages(os.path.join('/home/kumarv/pravirat/Realsat_labelling/river_code_k
                 binary_map1[frac_map[0] >= 0.01] = 1
                 count_pos = np.sum(binary_map1 > 0)
                 labeled, ncomponents = label(binary_map1, structure)
-                
-                
+                         
                 ax4.imshow(binary_map1)
                 ax4.title.set_text(' Fraction Map 0.01 no.cc:' + str(ncomponents) + ' Count:'+str(count_pos))
                 
@@ -201,7 +200,6 @@ with PdfPages(os.path.join('/home/kumarv/pravirat/Realsat_labelling/river_code_k
                 ax6.imshow(binary_map3)
                 ax6.title.set_text(' Fraction Map 0.1 no.cc:' + str(ncomponents) + ' Count:'+str(count_pos))
 
-
                 binary_map4 = np.zeros(frac_map[0].shape)
                 binary_map4[frac_map[0] >= 0.2] = 1
                 count_pos = np.sum(binary_map4 > 0)
@@ -210,9 +208,10 @@ with PdfPages(os.path.join('/home/kumarv/pravirat/Realsat_labelling/river_code_k
                 ax7.imshow(binary_map4)
                 ax7.title.set_text(' Fraction Map 0.2 no.cc:' + str(ncomponents) + ' Count:'+str(count_pos))
 
-    
 
                 pdf.savefig(fig)
                 fig = plt.figure(figsize=(35, 5))
+
+
 
 
